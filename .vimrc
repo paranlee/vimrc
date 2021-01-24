@@ -64,7 +64,6 @@ Plugin 'frazrepo/vim-rainbow'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'MattesGroeger/vim-bookmarks'
 call vundle#end()
 
 set tagbsearch
@@ -122,3 +121,8 @@ noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 5)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 5)<CR>
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 3)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 3)<CR>
+
+highlight BookmarkSign ctermbg=NONE ctermfg=160
+highlight BookmarkLine ctermbg=194 ctermfg=NONE
+let g:bookmark_sign = '♥'
+let g:bookmark_highlight_lines = 1
