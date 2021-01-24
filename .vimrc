@@ -64,7 +64,7 @@ Plugin 'frazrepo/vim-rainbow'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'ctrlpvim/ctrlp.vim'
-
+Plugin 'MattesGroeger/vim-bookmarks'
 call vundle#end()
 
 set tagbsearch
