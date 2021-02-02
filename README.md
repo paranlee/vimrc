@@ -1,5 +1,23 @@
 # vimrc
 
+1. Set up [Vundle]:
+
+` git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+
+2. Set up [User .vimrc]:
+
+` git clone https://github.com/paranlee/vimrc.git ~/vimrc`
+
+` cp ~/vimrc/.vimrc ~`
+
+2. Install Plugins:
+
+Launch `vim` and run `:PluginInstall`
+
+<hr>
+
+참고:
+
 <a href="https://github.com/VundleVim/Vundle.vim">Vundle.vim</a>
 
 레포지토리에 README.md 내용을 보면 Vundle 을 git clone 하고 
