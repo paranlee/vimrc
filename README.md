@@ -1,18 +1,18 @@
 # vimrc
 
-1. Set up [Vundle]:
+## 1. Set up [Vundle]:
 
-` git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+  ` git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
 
-2. Set up [User .vimrc]:
+## 2. Set up [User .vimrc]:
 
-` git clone https://github.com/paranlee/vimrc.git ~/vimrc`
+  ` git clone https://github.com/paranlee/vimrc.git ~/vimrc`
 
-` cp ~/vimrc/.vimrc ~`
+  ` cp ~/vimrc/.vimrc ~`
 
-2. Install Plugins:
+## 3. Install Plugins:
 
-Launch `vim` and run `:PluginInstall`
+  Launch `vim` and run `:PluginInstall`
 
 <hr>
 
