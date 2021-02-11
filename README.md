@@ -19,10 +19,6 @@
   Add ` Plugin 'Valloric/YouCompleteMe' ` and run `:PluginInstall`
 
   Run ` bash YouCompleteMe.sh`
-  
-  Get configuration file in Project parent dir
-  ` wget https://github.com/ycm-core/ycmd/blob/master/.ycm_extra_conf.py`
-
 
 <hr>
 
