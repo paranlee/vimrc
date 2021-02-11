@@ -18,7 +18,7 @@
 
   add ` Plugin 'Valloric/YouCompleteMe' ` and run `:PluginInstall`
 
-  run` bash YouCompleteMe.sh`
+  run ` bash YouCompleteMe.sh`
 
 
 <hr>
