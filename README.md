@@ -14,6 +14,13 @@
 
   Launch `vim` and run `:PluginInstall`
 
+## (Optional) add C++ autocompletion YouCompleteMe vundle plugin in .vimrc
+
+  add ` Plugin 'Valloric/YouCompleteMe' ` and run `:PluginInstall`
+
+  run` bash YouCompleteMe.sh`
+
+
 <hr>
 
 참고:
