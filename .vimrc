@@ -43,15 +43,13 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 call vundle#begin()
 
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
+Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'ronakg/quickr-cscope.vim'
 Plugin 'liuchengxu/vista.vim'
 Plugin 'preservim/nerdtree'
-Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'zivyangll/git-blame.vim'
 Plugin 'MattesGroeger/vim-bookmarks'
-
+Plugin 'iberianpig/tig-explorer.vim'
 Plugin 'terryma/vim-smooth-scroll'
 
 Plugin 'lfv89/vim-interestingwords'
@@ -68,12 +66,9 @@ call vundle#end()
 
 set tagbsearch
 
-" easy-tags setting
-set tag=./tags;/
-let g:easytags_async = 1
-let g:easytags_auto_highlight = 0
-let g:easytags_include_members = 1
-let g:easytags_dynamic_files = 1
+"" vim-gutentags
+let g:gutentags_project_root = ['.tag_root']
+let g:gutentags_project_info = []
 
 " cscope setting
 function! LoadCscope()
