@@ -74,6 +74,7 @@ Plugin 'dominikduda/vim_current_word'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 " Git
+" apt -y install tig
 Plugin 'iberianpig/tig-explorer.vim'
 
 " Linting
