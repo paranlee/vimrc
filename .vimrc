@@ -43,34 +43,51 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 call vundle#begin()
 
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'ronakg/quickr-cscope.vim'
-Plugin 'liuchengxu/vista.vim'
-Plugin 'preservim/nerdtree'
-Plugin 'zivyangll/git-blame.vim'
-Plugin 'MattesGroeger/vim-bookmarks'
-Plugin 'iberianpig/tig-explorer.vim'
-Plugin 'terryma/vim-smooth-scroll'
-
-Plugin 'lfv89/vim-interestingwords'
-Plugin 'itchyny/vim-cursorword'
-
-Plugin 'dominikduda/vim_current_word'
-
+" View
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'frazrepo/vim-rainbow'
 Plugin 'nathanaelkane/vim-indent-guides'
 
+" Tag
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'ronakg/quickr-cscope.vim'
+
+" C/C++
+Plugin 'ycm-core/YouCompleteMe', { 'for': ['c', 'cpp', 'objc'] }
+Plugin 'derekwyatt/vim-protodef', { 'for': ['c', 'cpp', 'objc'] }
+Plugin 'derekwyatt/vim-fswitch', { 'for': ['c', 'cpp', 'objc'] }
+
+" protobuf
+Plugin 'uarun/vim-protobuf'
+
+" Markdown
+Plugin 'suan/vim-instant-markdown', { 'for': 'markdown' }
+
+" Navigation
+Plugin 'liuchengxu/vista.vim'
+Plugin 'preservim/nerdtree'
+Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'terryma/vim-smooth-scroll'
+Plugin 'lfv89/vim-interestingwords'
+Plugin 'itchyny/vim-cursorword'
+Plugin 'dominikduda/vim_current_word'
 Plugin 'ctrlpvim/ctrlp.vim'
+
+" Git
+Plugin 'iberianpig/tig-explorer.vim'
+
+" Linting
+Plugin 'w0rp/ale'
+
 call vundle#end()
 
 set tagbsearch
 
-"" vim-gutentags
+" vim-gutentags
 let g:gutentags_project_root = ['.tag_root']
 let g:gutentags_project_info = []
 
-" cscope setting
+" cscope
 function! LoadCscope()
 	let db = findfile("cscope.out", ".;")
 	if (!empty(db))
@@ -86,7 +103,28 @@ endfunction
 
 au BufEnter /* call LoadCscope()
 
-" Vista setting
+" YouComleteMe
+" python3 install.py --clangd-completer
+function! BuildYCM(info)
+	if a:info.status == 'installed' || a:info.force
+		!./install.py --clang-completer
+	endif
+endfunction
+
+set completeopt-=preview
+
+nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+inoremap <leader>; <C-x><C-o>
+
+let g:ycm_complete_in_comments=1
+let g:ycm_confirm_extra_conf=0
+let g:ycm_collect_identifiers_from_tags_files=0
+let g:ycm_min_num_of_chars_for_completion=1
+let g:ycm_cache_omnifunc=0
+let g:ycm_seed_identifiers_with_syntax=1
+
+" Vista
 function! NearestMethodOrFunction() abort
 return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
@@ -103,13 +141,18 @@ set cursorline
 set cursorcolumn 
 set number
 
-let g:indent_guides_enable_on_vim_startup = 1
-
-colorscheme codedark
-au FileType c,cpp,objc,objcpp call rainbow#load()
-
+" NERDTree
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 au VimEnter * NERDTree
+
+" vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+
+" vim-code-dark
+colorscheme codedark
+
+" vim-rainbow
+au FileType c,cpp,objc,objcpp call rainbow#load()
 
 " vim-smooth-scroll
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 5)<CR>
@@ -117,7 +160,10 @@ noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 5)<CR>
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 3)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 3)<CR>
 
+" vim-bookmarks
 highlight BookmarkSign ctermbg=NONE ctermfg=160
 highlight BookmarkLine ctermbg=194 ctermfg=NONE
 let g:bookmark_sign = '♥'
 let g:bookmark_highlight_lines = 1
+
+set encoding=utf-8
