@@ -1,33 +1,32 @@
 # vimrc
 
-## 1. Set up [Vundle]:
+## [Vundle](https://github.com/VundleVim/Vundle.vim)
 
-  ` git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+```console
+ubuntu@paranlee:~$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+```
 
-## 2. Set up [User .vimrc]:
+## .vimrc
 
-  ` git clone https://github.com/paranlee/vimrc.git ~/vimrc`
+```console
+ubuntu@paranlee:~$ git clone https://github.com/paranlee/vimrc.git ~/vimrc`
+ubuntu@paranlee:~$ cp ~/vimrc/.vimrc ~
+```
 
-  ` cp ~/vimrc/.vimrc ~`
+## Preinstall Plugins
 
-## 3. Install Plugins:
+Install dependency plugins in ubuntu ≥ 20.04
 
-  Launch `vim` and run `:PluginInstall`
+```console
+ubuntu@paranlee:~$ apt -y install build-essential cmake python3-dev universal-ctags cscope
+```
 
-## (Optional) add C++ autocompletion YouCompleteMe vundle plugin in .vimrc
+## Install Plugins
 
-  Add ` Plugin 'Valloric/YouCompleteMe' ` and run `:PluginInstall`
+Launch `vim` and run `:PluginInstall`
 
-  Run ` bash YouCompleteMe.sh`
+```console
+ubuntu@paranlee:~$ vim .vimrc
 
-<hr>
-
-참고:
-
-<a href="https://github.com/VundleVim/Vundle.vim">Vundle.vim</a>
-
-레포지토리에 README.md 내용을 보면 Vundle 을 git clone 하고 
-
-default .vimrc 를 설정해주는 방법이 나옵니다.
-
-이 레포지토리는 현재 저의 .virmrc 세팅을 보관합니다.
+:PluginInstall
+```
