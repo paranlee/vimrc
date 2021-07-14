@@ -167,4 +167,19 @@ highlight BookmarkLine ctermbg=194 ctermfg=NONE
 let g:bookmark_sign = '♥'
 let g:bookmark_highlight_lines = 1
 
+"" default
 set encoding=utf-8
+
+" ruler
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+" show space
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set list
+
+" no tab 4 space
+set smartindent
+set tabstop=4
+set expandtab
+set shiftwidth=4
