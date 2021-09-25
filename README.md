@@ -3,13 +3,13 @@
 ## [Vundle](https://github.com/VundleVim/Vundle.vim)
 
 ```console
-ubuntu@paranlee:~$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+ubuntu@paranlee:~$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 ## .vimrc
 
 ```console
-ubuntu@paranlee:~$ git clone https://github.com/paranlee/vimrc.git ~/vimrc`
+ubuntu@paranlee:~$ git clone https://github.com/paranlee/vimrc.git ~/vimrc
 ubuntu@paranlee:~$ cp ~/vimrc/.vimrc ~
 ```
 
