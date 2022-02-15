@@ -2,31 +2,42 @@
 
 ## [Vundle](https://github.com/VundleVim/Vundle.vim)
 
-```console
-ubuntu@paranlee:~$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```sh
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 ## .vimrc
 
-```console
-ubuntu@paranlee:~$ git clone https://github.com/paranlee/vimrc.git ~/vimrc
-ubuntu@paranlee:~$ cp ~/vimrc/.vimrc ~
+```sh
+git clone https://github.com/paranlee/vimrc.git ~/vimrc
+cp ~/vimrc/.vimrc ~
 ```
 
 ## Preinstall Plugins
 
 Install dependency plugins in ubuntu ≥ 20.04
 
-```console
-ubuntu@paranlee:~$ apt -y install build-essential cmake python3-dev universal-ctags cscope
+```sh
+sudo apt -y install build-essential cmake python3-dev universal-ctags cscope
 ```
 
 ## Install Plugins
 
 Launch `vim` and run `:PluginInstall`
 
-```console
-ubuntu@paranlee:~$ vim .vimrc
+```sh
+vim .vimrc
 
-:PluginInstall
+# go to vim and 
+#   :PluginInstall
+```
+
+## Portable
+
+We can use portable vimrc tar in intranet.
+
+```sh
+tar cvf vimrc.tar vimrc
+# some moving via network
+tar xvf T.tar -C ~/vimrc
 ```
